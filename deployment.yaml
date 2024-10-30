@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ labels:
+   app: liberty-lab-1
+ name: liberty-lab-1
+spec:
+ replicas: 1
+ selector:
+   matchLabels:
+     app: liberty-lab-1
+ template:
+   metadata:
+     labels:
+       app: iberty-lab-1
+   spec:
+     restartPolicy: Never
+     containers:
+     - image: jglab678/liberty-lab-1:lab
+       name: liberty-lab-1
+       ports:
+       - containerPort: 3007
